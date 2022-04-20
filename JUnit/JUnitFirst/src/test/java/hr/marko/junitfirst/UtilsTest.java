@@ -20,13 +20,22 @@ class UtilsTest {
     void afterEach() {
     }
 
+    @DisplayName("Multiply")
     @Test
+    void testMultiply() {
+
+        assertEquals(12, utils.multiply(4, 3), "4*3 must be 12");
+    }
+
+    @Test
+    @DisplayName("Equals and Not Equals")
     void testEqualsAndNotEquals() {
         assertEquals(6, utils.add(4, 2), "2 + 4 equals 6");
         assertNotEquals(6, utils.add(4, 4), "4 + 4 not equals 6");
     }
 
     @Test
+    @DisplayName("Null and Not Null")
     void testNullAndNotNull() {
         String nullString = null;
         String notNullString = "test";
@@ -36,6 +45,7 @@ class UtilsTest {
     }
 
     @Test
+    @DisplayName("Same and Not Same")
     void testSameAndNotSame() {
         String test = "test";
 
@@ -44,6 +54,7 @@ class UtilsTest {
     }
 
     @Test
+    @DisplayName("True and False")
     void testTrueFalse() {
         int gradeOne = 10;
         int gradeTwo = 5;
@@ -53,6 +64,7 @@ class UtilsTest {
     }
 
     @Test
+    @DisplayName("Array Equals")
     void testArrayEquals() {
         String[] array = {"A", "B", "C"};
 
@@ -60,6 +72,7 @@ class UtilsTest {
     }
 
     @Test
+    @DisplayName("Iterable equals")
     void testIterableEquals() {
         List<String> testList = Arrays.asList("test", "demo", "marko");
 
@@ -67,6 +80,7 @@ class UtilsTest {
     }
 
     @Test
+    @DisplayName("Lines match")
     void testLinesMatch() {
         List<String> testList = Arrays.asList("test", "demo", "marko");
 
@@ -74,6 +88,7 @@ class UtilsTest {
     }
 
     @Test
+    @DisplayName("Throws and Does Not Throw")
     void testThrowsAndDoesNotThrow() {
         assertThrows(Exception.class, () -> {
             utils.throwException(-1);
@@ -85,6 +100,7 @@ class UtilsTest {
     }
 
     @Test
+    @DisplayName("Timeout")
     void testTimeout() {
         assertTimeoutPreemptively(Duration.ofSeconds(3), () -> utils.checkTimeout(), "Should execute in 3 seconds");
     }
