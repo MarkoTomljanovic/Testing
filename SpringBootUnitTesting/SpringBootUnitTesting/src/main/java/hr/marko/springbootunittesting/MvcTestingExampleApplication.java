@@ -1,4 +1,4 @@
-package hr.marko.springbootunittesting.component;
+package hr.marko.springbootunittesting;
 
 import hr.marko.springbootunittesting.models.CollegeStudent;
 import org.springframework.boot.SpringApplication;
